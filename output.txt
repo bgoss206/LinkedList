@@ -1,0 +1,632 @@
+Tue May 25 20:52:09 PDT 2021
+*** compiling with clang++ to create an executable called myprogram
+clang version 7.0.1 (tags/RELEASE_701/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rh/llvm-toolset-7.0/root/usr/bin
+*** running myprogram
+STARTING TESTS...
+
+------------------------------------
+TESTING EQUALITY OPERATORS: == & != 
+------------------------------------
+NOT EQUALS ASSERTS PASSED FOR NODEDATA 
+EQUALS ASSERTS PASSED FOR NODEDATA
+NOT EQUALS ASSERTS PASSED FOR EMPLOYEE
+EQUALS ASSERTS PASSED FOR EMPLOYEE
+------------------------------------
+TESTING REMOVE
+------------------------------------
+List before removal:
+
+22 a
+33 b
+44 c
+55 d
+
+attempting to remove: 44 c
+
+removed: 44 c
+
+List after removal:
+
+22 a
+33 b
+55 d
+
+List before removal:
+
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+attempting to remove: 1029 100000  Depp Johnny
+
+removed: 1029 100000  Depp Johnny
+
+List after removal:
+
+4214 100000  Button Benjamin
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+------------------------------------
+TESTING INSERT AND RETRIEVE
+------------------------------------
+Testing Retrieve to get: 100 z
+Successfully Retrieved: 100 z
+Testing Retrieve to get: 9834  85000  Archer James
+Successfully Retrieved: 9834  85000  Archer James
+------------------------------------
+TESTING INTERSECT
+------------------------------------
+22 a
+55 d
+
+22 a
+55 d
+
+22 a
+55 d
+
+1234 100000  Goss Braxton
+
+1234 100000  Goss Braxton
+
+1234 100000  Goss Braxton
+
+------------------------------------
+TESTING MERGE
+------------------------------------
+NodeData List1: 
+22 a
+33 b
+44 c
+55 d
+
+NodeData List2: 
+22 a
+33 x
+44 y
+55 d
+66 m
+77 c
+88 b
+99 z
+
+NodeData List3: 
+22 a
+33 b
+44 c
+55 d
+
+NodeData List4: 
+22 a
+33 x
+44 y
+55 d
+66 m
+77 c
+88 b
+99 z
+
+------------------------------
+
+Merging List1 with List2 (List1 is a parameter of the method)
+------------------------------
+22 a
+22 a
+33 b
+33 x
+44 c
+44 y
+55 d
+55 d
+66 m
+77 c
+88 b
+99 z
+
+PASSED TEST WITH SAME LIST AS PARAM
+------------------------------
+
+Merging EmptyList with List3 and List4 as parameters of the method
+------------------------------
+22 a
+22 a
+33 b
+33 x
+44 c
+44 y
+55 d
+55 d
+66 m
+77 c
+88 b
+99 z
+
+PASSED TEST WITH EMPTY MERGE
+List5: 
+22 a
+33 b
+44 c
+55 d
+
+List6: 
+22 a
+33 x
+44 y
+55 d
+66 m
+77 c
+88 b
+99 z
+
+------------------------------
+
+Merging non-empty with 2 other non-empty lists
+------------------------------
+All three merged:
+22 a
+22 a
+22 a
+22 a
+33 b
+33 b
+33 x
+33 x
+44 c
+44 c
+44 y
+44 y
+55 d
+55 d
+55 d
+55 d
+66 m
+66 m
+77 c
+77 c
+88 b
+88 b
+99 z
+99 z
+
+Employee List1: 
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+Employee List2: 
+1234 100000  Goss Braxton
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+
+Employee List3: 
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+Employee List4: 
+1234 100000  Goss Braxton
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+
+------------------------------
+
+Merging EmployeeList1 with EmployeeList2 (EmployeeList1 is a parameter of the method)
+------------------------------
+22 a
+22 a
+33 b
+33 x
+44 c
+44 y
+55 d
+55 d
+66 m
+77 c
+88 b
+99 z
+
+PASSED TEST WITH SAME LIST AS PARAM
+------------------------------
+
+Merging EmptyList with List3 and List4 as parameters of the method
+------------------------------
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+19241000000  Wonka Willy
+
+PASSED TEST WITH EMPTY MERGE FOR EMPLOYEE
+Employee List5: 
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+Employee List6: 
+1234 100000  Goss Braxton
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+
+------------------------------
+
+Merging non-empty with 2 other non-empty lists
+------------------------------
+All three merged:
+4214 100000  Button Benjamin
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+4584 120000  Mauser Henry
+1239   8900  Squarepants Spongebob
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+1234 900000  TestSubject Dummy
+19241000000  Wonka Willy
+19241000000  Wonka Willy
+
+------------------------------------
+------------------------------------
+TESTING LIST COPY CONSTRUCTOR
+------------------------------------
+ASSERT PASSED, LIST COPY CONSTRUCTOR WORKING FOR NODEDATA
+ASSERT PASSED, LIST COPY CONSTRUCTOR WORKING FOR EMPLOYEE
+------------------------------------
+------------------------------------
+TESTING EQUALS OPERATOR
+------------------------------------
+EQUALS OPERATOR OVERLOAD FOR NODEDATA TEST PASSED
+EQUALS OPERATOR OVERLOAD FOR EMPLOYEES TEST PASSED
+------------------------------------
+------------------------------------
+TESTING ISEMPTY
+------------------------------------
+NODEDATA AND EMPLOYEE PASSED ISEMPTY
+------------------------------------
+*** running with valgrind
+==1847== Memcheck, a memory error detector
+==1847== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1847== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1847== Command: ./myprogram
+==1847== 
+STARTING TESTS...
+
+------------------------------------
+TESTING EQUALITY OPERATORS: == & != 
+------------------------------------
+NOT EQUALS ASSERTS PASSED FOR NODEDATA 
+EQUALS ASSERTS PASSED FOR NODEDATA
+NOT EQUALS ASSERTS PASSED FOR EMPLOYEE
+EQUALS ASSERTS PASSED FOR EMPLOYEE
+------------------------------------
+TESTING REMOVE
+------------------------------------
+List before removal:
+
+22 a
+33 b
+44 c
+55 d
+
+attempting to remove: 44 c
+
+removed: 44 c
+
+List after removal:
+
+22 a
+33 b
+55 d
+
+List before removal:
+
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+attempting to remove: 1029 100000  Depp Johnny
+
+removed: 1029 100000  Depp Johnny
+
+List after removal:
+
+4214 100000  Button Benjamin
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+------------------------------------
+TESTING INSERT AND RETRIEVE
+------------------------------------
+Testing Retrieve to get: 100 z
+Successfully Retrieved: 100 z
+Testing Retrieve to get: 9834  85000  Archer James
+Successfully Retrieved: 9834  85000  Archer James
+------------------------------------
+TESTING INTERSECT
+------------------------------------
+22 a
+55 d
+
+22 a
+55 d
+
+22 a
+55 d
+
+1234 100000  Goss Braxton
+
+1234 100000  Goss Braxton
+
+1234 100000  Goss Braxton
+
+------------------------------------
+TESTING MERGE
+------------------------------------
+NodeData List1: 
+22 a
+33 b
+44 c
+55 d
+
+NodeData List2: 
+22 a
+33 x
+44 y
+55 d
+66 m
+77 c
+88 b
+99 z
+
+NodeData List3: 
+22 a
+33 b
+44 c
+55 d
+
+NodeData List4: 
+22 a
+33 x
+44 y
+55 d
+66 m
+77 c
+88 b
+99 z
+
+------------------------------
+
+Merging List1 with List2 (List1 is a parameter of the method)
+------------------------------
+22 a
+22 a
+33 b
+33 x
+44 c
+44 y
+55 d
+55 d
+66 m
+77 c
+88 b
+99 z
+
+PASSED TEST WITH SAME LIST AS PARAM
+------------------------------
+
+Merging EmptyList with List3 and List4 as parameters of the method
+------------------------------
+22 a
+22 a
+33 b
+33 x
+44 c
+44 y
+55 d
+55 d
+66 m
+77 c
+88 b
+99 z
+
+PASSED TEST WITH EMPTY MERGE
+List5: 
+22 a
+33 b
+44 c
+55 d
+
+List6: 
+22 a
+33 x
+44 y
+55 d
+66 m
+77 c
+88 b
+99 z
+
+------------------------------
+
+Merging non-empty with 2 other non-empty lists
+------------------------------
+All three merged:
+22 a
+22 a
+22 a
+22 a
+33 b
+33 b
+33 x
+33 x
+44 c
+44 c
+44 y
+44 y
+55 d
+55 d
+55 d
+55 d
+66 m
+66 m
+77 c
+77 c
+88 b
+88 b
+99 z
+99 z
+
+Employee List1: 
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+Employee List2: 
+1234 100000  Goss Braxton
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+
+Employee List3: 
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+Employee List4: 
+1234 100000  Goss Braxton
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+
+------------------------------
+
+Merging EmployeeList1 with EmployeeList2 (EmployeeList1 is a parameter of the method)
+------------------------------
+22 a
+22 a
+33 b
+33 x
+44 c
+44 y
+55 d
+55 d
+66 m
+77 c
+88 b
+99 z
+
+PASSED TEST WITH SAME LIST AS PARAM
+------------------------------
+
+Merging EmptyList with List3 and List4 as parameters of the method
+------------------------------
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+19241000000  Wonka Willy
+
+PASSED TEST WITH EMPTY MERGE FOR EMPLOYEE
+Employee List5: 
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+19241000000  Wonka Willy
+
+Employee List6: 
+1234 100000  Goss Braxton
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+
+------------------------------
+
+Merging non-empty with 2 other non-empty lists
+------------------------------
+All three merged:
+4214 100000  Button Benjamin
+4214 100000  Button Benjamin
+1029 100000  Depp Johnny
+1029 100000  Depp Johnny
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+1234 100000  Goss Braxton
+4584 120000  Mauser Henry
+4584 120000  Mauser Henry
+1239   8900  Squarepants Spongebob
+1239   8900  Squarepants Spongebob
+1235 100000  Star Patrick
+1235 100000  Star Patrick
+1234 900000  TestSubject Dummy
+1234 900000  TestSubject Dummy
+19241000000  Wonka Willy
+19241000000  Wonka Willy
+
+------------------------------------
+------------------------------------
+TESTING LIST COPY CONSTRUCTOR
+------------------------------------
+ASSERT PASSED, LIST COPY CONSTRUCTOR WORKING FOR NODEDATA
+ASSERT PASSED, LIST COPY CONSTRUCTOR WORKING FOR EMPLOYEE
+------------------------------------
+------------------------------------
+TESTING EQUALS OPERATOR
+------------------------------------
+EQUALS OPERATOR OVERLOAD FOR NODEDATA TEST PASSED
+EQUALS OPERATOR OVERLOAD FOR EMPLOYEES TEST PASSED
+------------------------------------
+------------------------------------
+TESTING ISEMPTY
+------------------------------------
+NODEDATA AND EMPLOYEE PASSED ISEMPTY
+------------------------------------
+==1847== 
+==1847== HEAP SUMMARY:
+==1847==     in use at exit: 0 bytes in 0 blocks
+==1847==   total heap usage: 709 allocs, 709 frees, 366,969 bytes allocated
+==1847== 
+==1847== All heap blocks were freed -- no leaks are possible
+==1847== 
+==1847== For lists of detected and suppressed errors, rerun with: -s
+==1847== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+*** cleaning up, deleting myprogram
+Tue May 25 20:52:14 PDT 2021
